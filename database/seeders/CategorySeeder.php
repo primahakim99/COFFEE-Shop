@@ -15,20 +15,14 @@ class CategorySeeder extends Seeder
     public function run()
     {
         Category::create([
-            'name' => 'Beverage',
-            'slug' => 'beverage',
-            'image' => 'Assets/images/banner-03.jpg'
-        ]);
-        
-        Category::create([
-            'name' => 'Chips',
-            'slug' => 'chips',
+            'name' => 'Beans',
+            'slug' => 'beans',
             'image' => 'Assets/images/banner-01.jpg'
         ]);
 
         Category::create([
-            'name' => 'Snack',
-            'slug' => 'snack',
+            'name' => 'Powder',
+            'slug' => 'powder',
             'image' => 'Assets/images/banner-02.jpg'
         ]);
     }
