@@ -1,4 +1,4 @@
-@extends('layouts.index')
+@extends('layouts.indexOwner')
 @section('content')
 <!-- Start Slider -->
 <div id="slides-shop" class="cover-slides">
@@ -8,7 +8,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="m-b-20"><strong>Welcome To <br> COFFEE-SHOP</strong></h1>
+                        <h1 class="m-b-20"><strong>Welcome To <br> Owner COFFE-SHOPE</strong></h1>
                         <p class="m-b-40">COFFEE-SHOP is an e-commerce that sells anything coffe product from Indonesia.</p>
                         <p><a class="btn hvr-hover" href="/shop">Shop Now</a></p>
                     </div>
@@ -20,7 +20,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="m-b-20"><strong>Welcome To <br> COFFEE-SHOP</strong></h1>
+                        <h1 class="m-b-20"><strong>Welcome To <br> Owner COFFE-SHOP</strong></h1>
                         <p class="m-b-40">COFFEE-SHOP is an e-commerce that sells anything coffe product from Indonesia.</p>
                         <p><a class="btn hvr-hover" href="/shop">Shop Now</a></p>
                     </div>
@@ -32,7 +32,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="m-b-20"><strong>Welcome To <br> COFFEE-SHOP</strong></h1>
+                        <h1 class="m-b-20"><strong>Welcome To <br> Owner COFFE-SHOP</strong></h1>
                         <p class="m-b-40">COFFEE-SHOP is an e-commerce that sells anything coffe product from Indonesia.</p>
                         <p><a class="btn hvr-hover" href="/shop">Shop Now</a></p>
                     </div>
@@ -51,14 +51,18 @@
 <div class="categories-shop">
     <div class="container">
         <div class="row">
-            @foreach($categories as $category)
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="shop-cat-box">
-                    <img class="img-fluid" src="{{ $category->image }}" alt="" />
-                    <a class="btn hvr-hover" href="#">{{ $category->name }}</a>
+                    <img class="img-fluid" src="Assets/images/banner-01.jpg" alt="" />
+                    <a class="btn hvr-hover" href="#">Beans</a>
                 </div>
             </div>
-            @endforeach
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="shop-cat-box">
+                    <img class="img-fluid" src="Assets/images/banner-02.jpg" alt="" />
+                    <a class="btn hvr-hover" href="#">Powder</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -166,15 +166,15 @@
                             </div>
                             <div class="rounded p-2 bg-light">
                                 <div class="media mb-2 border-bottom">
-                                    <div class="media-body"> <a href="detail.html">Apple Chips</a>
-                                        <div class="medium">Rp 31.500<span class="mx-2">|</span> Qty: 1 <span
-                                                class="mx-2">|</span> Subtotal: Rp 31.500</div>
+                                    <div class="media-body"> <a href="detail.html">Aceh Gayo Coffee (100 Gram)</a>
+                                        <div class="medium">Rp 10.000<span class="mx-2">|</span> Qty: 1 <span
+                                                class="mx-2">|</span> Subtotal: Rp Rp 10.000</div>
                                         <label for="cc-name">Store account number:</label>
                                         <input type="text" class="form-control" id="cc-name" placeholder="" required>
                                     </div>
                                 </div>
                                 <div class="media mb-2 border-bottom">
-                                    <div class="media-body"> <a href="detail.html">Bakpao Sayang</a>
+                                    <div class="media-body"> <a href="detail.html">Lampung Coffee (200 Gram)</a>
                                         <div class="medium">Price: Rp 30.000<span class="mx-2">|</span> Qty: 1 <span
                                                 class="mx-2">|</span> Subtotal: Rp 30.000</div>
                                         <label for="cc-name">Store account number:</label>
@@ -182,9 +182,9 @@
                                     </div>
                                 </div>
                                 <div class="media mb-2">
-                                    <div class="media-body"> <a href="detail.html">Bayam Crispy</a>
-                                        <div class="medium">Price: Rp 8.700<span class="mx-2">|</span> Qty: 1 <span
-                                                class="mx-2">|</span> Subtotal: Rp 8.700</div>
+                                    <div class="media-body"> <a href="detail.html">Toraja Coffee (400 Gram)</a>
+                                        <div class="medium">Price: Rp 50.000<span class="mx-2">|</span> Qty: 1 <span
+                                                class="mx-2">|</span> Subtotal: Rp 50.000</div>
                                         <label for="cc-name">Store account number:</label>
                                         <input type="text" class="form-control" id="cc-name" placeholder="" required>
                                     </div>
@@ -199,7 +199,7 @@
                             </div>
                             <div class="d-flex">
                                 <h4>Sub Total</h4>
-                                <div class="ml-auto font-weight-bold">Rp 70.200</div>
+                                <div class="ml-auto font-weight-bold">Rp 80.000</div>
                             </div>
                             <div class="d-flex">
                                 <h4>Discount</h4>
@@ -213,7 +213,7 @@
                             <hr>
                             <div class="d-flex gr-total">
                                 <h5>Grand Total</h5>
-                                <div class="ml-auto h5">Rp 70.200</div>
+                                <div class="ml-auto h5">Rp 90.000</div>
                             </div>
                             <hr>
                         </div>
