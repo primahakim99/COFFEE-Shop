@@ -8,8 +8,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="m-b-20"><strong>Welcome To <br> COFFEE-SHOP</strong></h1>
-                        <p class="m-b-40">COFFEE-SHOP is an e-commerce that sells anything coffe product from Indonesia.</p>
+                        <h1 class="m-b-20"><strong>Welcome To <br> NAF STORE</strong></h1>
+                        <p class="m-b-40">We collect a variety of typical Malang snacks from various sources of MSMEs throught Malang Raya</p>
                         <p><a class="btn hvr-hover" href="/shop">Shop Now</a></p>
                     </div>
                 </div>
@@ -20,8 +20,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="m-b-20"><strong>Welcome To <br> COFFEE-SHOP</strong></h1>
-                        <p class="m-b-40">COFFEE-SHOP is an e-commerce that sells anything coffe product from Indonesia.</p>
+                        <h1 class="m-b-20"><strong>Welcome To <br> NAF STORE</strong></h1>
+                        <p class="m-b-40">We collect a variety of typical Malang snacks from various sources of MSMEs throught Malang Raya</p>
                         <p><a class="btn hvr-hover" href="/shop">Shop Now</a></p>
                     </div>
                 </div>
@@ -32,8 +32,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="m-b-20"><strong>Welcome To <br> COFFEE-SHOP</strong></h1>
-                        <p class="m-b-40">COFFEE-SHOP is an e-commerce that sells anything coffe product from Indonesia.</p>
+                        <h1 class="m-b-20"><strong>Welcome To <br> NAF STORE</strong></h1>
+                        <p class="m-b-40">We collect a variety of typical Malang snacks from various sources of MSMEs throught Malang Raya</p>
                         <p><a class="btn hvr-hover" href="/shop">Shop Now</a></p>
                     </div>
                 </div>
@@ -55,7 +55,8 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="shop-cat-box">
                     <img class="img-fluid" src="{{ $category->image }}" alt="" />
-                    <a class="btn hvr-hover" href="#">{{ $category->name }}</a>
+                    <a class="btn hvr-hover" href="/shop?category={{ $category->slug }}">{{ $category->name }}</a>
+                    </a>
                 </div>
             </div>
             @endforeach
@@ -64,7 +65,7 @@
 </div>
 <!-- End Categories -->
 
-{{-- <div class="box-add-products">
+<div class="box-add-products">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12">
@@ -79,5 +80,5 @@
             </div>
         </div>
     </div>
-</div> --}}
+</div>
 @endsection

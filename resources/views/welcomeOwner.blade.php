@@ -8,9 +8,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="m-b-20"><strong>Welcome To <br> Owner COFFE-SHOPE</strong></h1>
-                        <p class="m-b-40">COFFEE-SHOP is an e-commerce that sells anything coffe product from Indonesia.</p>
-                        <p><a class="btn hvr-hover" href="/shop">Shop Now</a></p>
+                        <h1 class="m-b-20"><strong>Welcome To <br> Owner NAF STORE</strong></h1>
+                        <p class="m-b-40">We collect a variety of typical Malang snacks from various sources of MSMEs throught Malang Raya</p>
+
                     </div>
                 </div>
             </div>
@@ -20,9 +20,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="m-b-20"><strong>Welcome To <br> Owner COFFE-SHOP</strong></h1>
-                        <p class="m-b-40">COFFEE-SHOP is an e-commerce that sells anything coffe product from Indonesia.</p>
-                        <p><a class="btn hvr-hover" href="/shop">Shop Now</a></p>
+                        <h1 class="m-b-20"><strong>Welcome To <br> Owner NAF STORE</strong></h1>
+                        <p class="m-b-40">We collect a variety of typical Malang snacks from various sources of MSMEs throught Malang Raya</p>
+
                     </div>
                 </div>
             </div>
@@ -32,9 +32,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="m-b-20"><strong>Welcome To <br> Owner COFFE-SHOP</strong></h1>
-                        <p class="m-b-40">COFFEE-SHOP is an e-commerce that sells anything coffe product from Indonesia.</p>
-                        <p><a class="btn hvr-hover" href="/shop">Shop Now</a></p>
+                        <h1 class="m-b-20"><strong>Welcome To <br> Owner NAF STORE</strong></h1>
+                        <p class="m-b-40">We collect a variety of typical Malang snacks from various sources of MSMEs throught Malang Raya</p>
+
                     </div>
                 </div>
             </div>
@@ -54,13 +54,19 @@
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="shop-cat-box">
                     <img class="img-fluid" src="Assets/images/banner-01.jpg" alt="" />
-                    <a class="btn hvr-hover" href="#">Beans</a>
+                    <a class="btn hvr-hover" href="#">Chips</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="shop-cat-box">
                     <img class="img-fluid" src="Assets/images/banner-02.jpg" alt="" />
-                    <a class="btn hvr-hover" href="#">Powder</a>
+                    <a class="btn hvr-hover" href="#">Snack</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="shop-cat-box">
+                    <img class="img-fluid" src="Assets/images/banner-03.jpg" alt="" />
+                    <a class="btn hvr-hover" href="#">Beverage</a>
                 </div>
             </div>
         </div>
@@ -68,7 +74,7 @@
 </div>
 <!-- End Categories -->
 
-{{-- <div class="box-add-products">
+<div class="box-add-products">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12">
@@ -83,5 +89,5 @@
             </div>
         </div>
     </div>
-</div> --}}
+</div>
 @endsection

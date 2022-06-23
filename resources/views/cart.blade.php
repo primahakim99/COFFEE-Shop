@@ -39,88 +39,48 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @php $total = 0; @endphp
+                            @foreach ($carts as $cart)
                             <tr>
                                 <td class="thumbnail-img">
                                     <a href="#">
-                                        <img class="img-fluid" src="Assets/images/img-pro-01.jpg" alt="" />
+                                        <img class="img-fluid" src="{{$cart->product->image}}" alt="" />
                                     </a>
                                 </td>
                                 <td class="name-pr">
                                     <a href="#">
-                                        Aceh Gayo Coffee (100 Gram)
+                                        {{$cart->product->name}}
                                     </a>
                                 </td>
                                 <td class="price-pr">
-                                    <p>Rp 10.000</p>
+                                    <p>Rp {{$cart->product->price}}</p>
                                 </td>
-                                <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1"
-                                        class="c-input-text qty text"></td>
+                                <td class="quantity-box">
+                                    <div class="input-group text-center mb-3">
+                                        @if($cart->product_qty > 1)
+                                        <a href="{{url('/updatecart/'.$cart->id.'/-1')}}"
+                                            class="btn btn-sm bg-primary">-</a>
+                                        @endif
+                                        <input type="text" value="{{$cart->product_qty}}" name="qty"
+                                            class="form-control qty-input text-center" style="width:50px; height:35px">
+                                        <a href="{{url('/updatecart/'.$cart->id.'/1')}}"
+                                            class="btn btn-sm bg-primary">+</a>
+                                    </div>
+                                </td>
                                 <td class="total-pr">
-                                    <p>Rp 10.000</p>
+                                    <p>Rp {{$cart->product_qty*$cart->product->price}}</p>
                                 </td>
                                 <td class="remove-pr">
-                                    <a href="#">
+                                    <a href="{{ url('deletecart/'.$cart->id) }}">
                                         <i class="fas fa-times"></i>
                                     </a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td class="thumbnail-img">
-                                    <a href="#">
-                                        <img class="img-fluid" src="Assets/images/img-pro-02.jpg" alt="" />
-                                    </a>
-                                </td>
-                                <td class="name-pr">
-                                    <a href="#">
-                                        Lampung Coffee (200 Gram)
-                                    </a>
-                                </td>
-                                <td class="price-pr">
-                                    <p>Rp 30.000</p>
-                                </td>
-                                <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1"
-                                        class="c-input-text qty text"></td>
-                                <td class="total-pr">
-                                    <p>Rp 30.000</p>
-                                </td>
-                                <td class="remove-pr">
-                                    <a href="#">
-                                        <i class="fas fa-times"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="thumbnail-img">
-                                    <a href="#">
-                                        <img class="img-fluid" src="Assets/images/img-pro-03.jpg" alt="" />
-                                    </a>
-                                </td>
-                                <td class="name-pr">
-                                    <a href="#">
-                                        Toraja Coffee (400 Gram)
-                                    </a>
-                                </td>
-                                <td class="price-pr">
-                                    <p>Rp 50.000</p>
-                                </td>
-                                <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1"
-                                        class="c-input-text qty text"></td>
-                                <td class="total-pr">
-                                    <p>Rp 50.000</p>
-                                </td>
-                                <td class="remove-pr">
-                                    <a href="#">
-                                        <i class="fas fa-times"></i>
-                                    </a>
-                                </td>
-                            </tr>
+                            @php $total += $cart->product_qty*$cart->product->price; @endphp
+                            @endforeach
                         </tbody>
                     </table>
-                    <div class="col-lg-12 col-sm-6">
-                        <div class="update-box">
-                            <input value="Update Cart" type="submit">
-                        </div>
-                    </div>
+
                 </div>
             </div>
 
@@ -130,7 +90,7 @@
                     <h3>Order summary</h3>
                     <div class="d-flex">
                         <h4>Sub Total</h4>
-                        <div class="ml-auto font-weight-bold">Rp 70.200</div>
+                        <div class="ml-auto font-weight-bold">Rp {{$total}}</div>
                     </div>
                     <div class="d-flex">
                         <h4>Discount</h4>
@@ -138,11 +98,11 @@
                     </div>
                     <hr>
                     <div class="d-flex gr-total">
-                        <h5>Grand Total</h5>
-                        <div class="ml-auto h5">Rp 70.200</div>
+                        <h5>Total</h5>
+                        <div class="ml-auto h5">Rp {{$total-0}}</div>
                     </div>
                     <hr>
-                    <div class="col-12 d-flex shopping-box"><a href="checkout.html"
+                    <div class="col-12 d-flex shopping-box"><a href="checkout"
                             class="ml-auto btn hvr-hover">Checkout</a>
                     </div>
                 </div>
