@@ -5,12 +5,12 @@
                 <div class="login-box">
                     @guest
                     @if (Route::has('login') && Route::has('register'))
-                    <h4><a href="/sign-in" class="text-white">Sign In &emsp;</a>
-                        <a href="/sign-up"class="text-white">Sign Up</a>
-                    </h4>
+                    <h4><a href="/sign-in" class="text-white">Sign In &emsp;</a><a href="/sign-up"
+                            class="text-white">Sign Up</a></h4>
                     @endif
                     @else
                     <h4><a href="{{ route('welcome') }}" class="text-white">{{ Auth::user()->name }}</a></h4>
+                    <a style="color: #ffff" href="{{ route('userProfile') }}">Profile</a>
                     <a style="color: #ffff" id="logout-btn" class="btn btn-sm btn-denger" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
