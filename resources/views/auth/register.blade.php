@@ -20,7 +20,7 @@
 	<div class="wrap-input100 validate-input">
 		<label for="phone" class="col-md-4 col-form-label text-md-end">Phone Number</label>
 		<input class="input100 @error('phone') is-invalid @enderror" type="text" name="phone" value="{{ old('phone') }}"
-			required autocomplete="phone" autofocus>
+			required autocomplete="name" autofocus>
 		@error('phone')
 		<span class="invalid-feedback alert alert-danger" role="alert">
 			<strong>{{ $message }}</strong>
