@@ -2,32 +2,38 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\cart;
+use App\Models\Order;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Wishlist;
+use App\Models\Evidence_shipping;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\MessageBag;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class WelcomeController extends Controller
 {
     public function index()
     {
         return view('welcome', [
-            "title" => "COFFEE-SHOP",
+            "title" => "Coffee Shop",
             'categories' => Category::all(),
         ]);
     }
     public function indexAdmin()
     {
         return view('welcomeAdmin', [
-            "title" => "COFFEE-SHOP-Admin",
+            "title" => "Coffee Shop Admin",
 
         ]);
     }
     public function indexOwner()
     {
         return view('welcomeOwner', [
-            "title" => "COFFEE-SHOP-Owner"
+            "title" => "Coffee Shop-Owner"
         ]);
     }
 
@@ -35,14 +41,25 @@ class WelcomeController extends Controller
     {
         return view('Shop', [
             "title" => "Shop",
+            "products" => product::latest()->filter(request(['category','search']))->get(),
+        ]);
+    }
+
+    public function product()
+    {
+        return view('productAdmin', [
+            "title" => "Product",
             "products" => product::all(),
         ]);
     }
+
     public function wishlist()
     {
         if (Auth::check()) {
-            return view('Wishlist', [
-                "title" => "Wishlist"
+            $wishlist = Wishlist::where('user_id', Auth::id())->get();
+            return view('wishlist', [
+                "title" => "Wishlist",
+                'wishlists' => $wishlist,
             ]);
         } else {
             return view('Wishlist', [
@@ -51,50 +68,69 @@ class WelcomeController extends Controller
             ]);
         }
     }
-    public function cart()
+    public function order()
     {
         if (Auth::check()) {
-            return view('Cart', [
-                "title" => "Cart"
+            $orders = Order::where('user_id', Auth::id())->get();
+            return view('order', [
+                "title" => "Order",
+                'orders' => $orders,
             ]);
         } else {
-            return view('Cart', [
-                "title" => "Cart",
-                'errors' => 'You need to login first. :)'
-            ]);
-        }
-    }
-    public function checkout()
-    {
-        if (Auth::check()) {
-            return view('Checkout', [
-                "title" => "Checkout"
-            ]);
-        } else {
-            return view('Checkout', [
-                "title" => "Checkout",
+            return view('Wishlist', [
+                "title" => "Order",
                 'errors' => 'You need to login first. :)'
             ]);
         }
     }
 
-//admin side
+    public function updateOrder($id, $status){
+        $cart = Order::where('id', $id)->increment('status', $status);
+        return redirect()->back();
+    }
+
+    // public function updateOrder($id)
+    // {
+    //     if (Auth::check()) {
+    //         $orders = Order::find($id);
+    //         $orders->status = '3';
+    //         $orders->update();
+    //         return redirect('order');
+    //     } else {
+    //         return view('order', [
+    //             "title" => "Order",
+    //             'errors' => 'You need to login first. :)'
+    //         ]);
+    //     }
+    // }
+
+
+    //admin side
     public function ownerData()
     {
         return view('admin.ownerData', [
             "title" => "owner_data"
         ]);
     }
+
     public function customerData()
     {
         return view('admin.customerData', [
             "title" => "customer_data"
         ]);
     }
+
     public function transaction()
     {
+        $order = Order::all();
+        $evidence = Evidence_shipping::join('orders', 'Evidence_shipping.order_id', '=', 'orders.id')
+                                    ->get();
+                                    
+        // $evidences = Evidence_shipping::where('order_id', Order::id())->get();
         return view('admin.transaction', [
-            "title" => "transaction"
+            "title" => "transaction",
+            'orders' => $order,
+            'evidence'=> $evidence,
         ]);
     }
 
@@ -118,8 +154,7 @@ class WelcomeController extends Controller
         ]);
     }
 
-
-    public function signIn()
+    public function SignIn()
     {
         return view('auth.login', [
             "title" => "Sign In"
@@ -129,6 +164,14 @@ class WelcomeController extends Controller
     {
         return view('auth.register', [
             "title" => "Sign Up"
+        ]);
+    }
+    public function profile()
+    {
+        $model = Auth::user();
+
+        return view('profile',compact('model'), [
+            "title" => "Profile"
         ]);
     }
 }
