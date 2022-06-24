@@ -30,7 +30,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    //protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.
@@ -51,7 +51,7 @@ class LoginController extends Controller
 
     protected function redirectTo()
     {
-        if(Auth::user()->role_as == 'admin')
+        if(Auth::user()->role_as == 'admin') 
         {
             return redirect('/admin');
         }
@@ -90,4 +90,10 @@ class LoginController extends Controller
             return Redirect::back()->withErrors($errors);
         }
     }
+    // public function showLoginForm()
+    // {
+    //     return view('auth.login', [
+    //         "title" => "Coffee Shop"
+    //     ]);
+    // }
 }
