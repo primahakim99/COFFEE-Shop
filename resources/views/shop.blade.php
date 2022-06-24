@@ -62,7 +62,7 @@
                                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                         <div class="products-single fix">
                                             <div class="box-img-hover">
-                                                <img src="{{ asset('storage/'.$product->image) }}" class="img-fluid"
+                                                <img src="{{ asset($product->image) }}" class="img-fluid"
                                                     alt="Image" style="width: 300px; height:300px">
                                             </div>
                                             <div class="why-text">
@@ -84,10 +84,7 @@
                                                         Wishlist</button>
                                                 </form>
                                             </div>
-                                            <div class="card-footer">
-                                                <small class="text-muted">Store : {{ $product->store->storeName }}
-                                                </small>
-                                            </div>
+                                           
                                         </div>
                                     </div>
                                     @endforeach
@@ -100,7 +97,7 @@
                                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                             <div class="products-single fix">
                                                 <div class="box-img-hover">
-                                                    <img src="{{ asset('storage/'.$product->image) }}" class="img-fluid"
+                                                    <img src="{{ asset($product->image) }}" class="img-fluid"
                                                         alt="Image" style="width: 300px; height:300px">
                                                 </div>
                                             </div>
@@ -126,11 +123,8 @@
                                                         Wishlist</button>
                                                 </form>
                                             </div>
-                                            <div class="card-footer">
-                                                <small class="text-muted">Store : {{ $product->store->storeName }}
-                                                </small>
-                                            </div>
-                                        </div>
+                                            
+                                        </div> -->
                                         @endforeach
                                     </div>
                                 </div>
