@@ -84,7 +84,10 @@
                                                         Wishlist</button>
                                                 </form>
                                             </div>
-                                           
+                                            <div class="card-footer">
+                                                <small class="text-muted">Store : {{ $product->store->storeName }}
+                                                </small>
+                                            </div>
                                         </div>
                                     </div>
                                     @endforeach
@@ -123,7 +126,10 @@
                                                         Wishlist</button>
                                                 </form>
                                             </div>
-                                            
+                                            <div class="card-footer">
+                                                <small class="text-muted">Store : {{ $product->store->storeName }}
+                                                </small>
+                                            </div>
                                         </div> -->
                                         @endforeach
                                     </div>

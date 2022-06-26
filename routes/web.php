@@ -77,4 +77,4 @@ Route::post('evidence_shipping', [OwnerOrderController::class, 'store']);//evide
 
 Route::get('/updatecart/{id}/{quantity}', [CartController::class, 'update']);
 Route::get('/deletecart/{carts}', [CartController::class, 'destroy']);
-Route::get('/download-pdf', [OrderController::class, 'downloadPDF']);
+Route::get('/download-pdf', [OwnerOrderController::class, 'pdfPrint']);

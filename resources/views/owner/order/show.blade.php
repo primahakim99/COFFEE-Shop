@@ -4,8 +4,13 @@
     <h1 class="mt-3 text-center" style="text-transform: uppercase"><b> Order Detail </b></h1>
     <div class="col-md-8">
         <div class="mt-3 mb-5">
+        
+                
             <table class="table table-borderless">
                 @foreach($pesan as $order)
+                <td>
+                    <a href="/download-pdf/{{ $order->id }}" class="btn bg-info">ExportPDF</a>
+                </td>
                 <tr>
                     <th>Name:</th>
                     <td> {{ $order->name }} </td>

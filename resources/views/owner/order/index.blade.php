@@ -31,8 +31,9 @@
                     <td scope="row">Order Reject</td>
                     @endif
                 <td>
-                    <a href="/orderOwner/{ $order->id }" class="btn bg-info">Show</a>
+                    <a href="/orderOwner/{{ $order->id }}" class="btn bg-info">Show</a>
                 </td>
+                
             </tr>
         </tbody>
         @endforeach

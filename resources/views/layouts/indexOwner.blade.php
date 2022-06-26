@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Basic -->
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 <head>
     @include('layouts.partials.head')
@@ -28,7 +29,7 @@
     <!-- End copyright  -->
 
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
-
+    
     <!-- ALL JS FILES -->
     <script src="Assets/js/jquery-3.2.1.min.js"></script>
     <script src="Assets/js/popper.min.js"></script>

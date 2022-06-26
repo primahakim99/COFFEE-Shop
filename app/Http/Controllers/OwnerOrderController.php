@@ -8,6 +8,8 @@ use App\Models\Store;
 use App\Models\product;
 use App\Models\OrderItem;
 use Illuminate\Http\Request;
+use PDF;
+use Dompdf\Dompdf;
 
 class OwnerOrderController extends Controller
 {
@@ -19,9 +21,9 @@ class OwnerOrderController extends Controller
     public function index()
     {
         $orders = Store::join('order_items', 'order_items.store_id', '=', 'stores.id')
-                        ->join('orders', 'order_items.order_id', '=', 'orders.id')
-                        ->where('stores.user_id', auth()->user()->id)
-                        ->get();
+            ->join('orders', 'order_items.order_id', '=', 'orders.id')
+            ->where('stores.user_id', auth()->user()->id)
+            ->get();
         // dd($orders);
         return view('owner.order.index', [
             "title" => "Order Owner",
@@ -65,10 +67,10 @@ class OwnerOrderController extends Controller
     public function show(Order $order, $id)
     {
         $orders = Store::join('order_items', 'order_items.store_id', '=', 'stores.id')
-                        ->join('products', 'products.id', '=', 'order_items.product_id')
-                        ->where('stores.user_id', auth()->user()->id)
-                        ->where('order_items.order_id', $id)
-                        ->get();
+            ->join('products', 'products.id', '=', 'order_items.product_id')
+            ->where('stores.user_id', auth()->user()->id)
+            ->where('order_items.order_id', $id)
+            ->get();
         $pesan = Order::all()->where('id', $id);
         // dd($orders);
         return view('owner.order.show', [
@@ -110,5 +112,31 @@ class OwnerOrderController extends Controller
     public function destroy(Order $order)
     {
         //
+    }
+
+    public function pdfPrint(Order $order, $id)
+    {
+        $orders = Store::join('order_items', 'order_items.store_id', '=', 'stores.id')
+            ->join('products', 'products.id', '=', 'order_items.product_id')
+            ->where('stores.user_id', auth()->user()->id)
+            ->where('order_items.order_id', $id)
+            ->get();
+        $pesan = Order::all()->where('id', $id);
+        $pdf = PDF::loadview('owner.order.show', [
+            "title" => "View Order Owner",
+            'orders' => $orders,
+            'pesan' => $pesan,
+        ]);
+        $dompdf = new Dompdf();
+        return $pdf->download('laporan-pdf.pdf');
+
+        // (Optional) Setup the paper size and orientation
+        $dompdf->setPaper('A4', 'landscape');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser
+        $dompdf->stream();
     }
 }
